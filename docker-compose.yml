@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: paperplane
+      POSTGRES_PASSWORD: paperplane
+      POSTGRES_DB: paperplane
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U paperplane -d paperplane"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  server:
+    build: .
+    ports:
+      - "3100:3100"
+    environment:
+      DATABASE_URL: postgres://paperplane:paperplane@db:5432/paperplane
+      PORT: "3100"
+      SERVE_UI: "true"
+      PAPERPLANE_DEPLOYMENT_MODE: "authenticated"
+      PAPERPLANE_DEPLOYMENT_EXPOSURE: "private"
+      PAPERPLANE_PUBLIC_URL: "${PAPERPLANE_PUBLIC_URL:-http://localhost:3100}"
+      BETTER_AUTH_SECRET: "${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
+    volumes:
+      - paperplane-data:/paperplane
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  paperplane-data:

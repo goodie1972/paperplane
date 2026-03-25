@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "edgeone-pages-mcp": {
+      "command": "npx",
+      "args": ["-y", "edgeone-pages-mcp"]
+    }
+  }
+}

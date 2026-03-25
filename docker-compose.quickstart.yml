@@ -1,0 +1,18 @@
+services:
+  paperplane:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PAPERPLANE_PORT:-3100}:3100"
+    environment:
+      HOST: "0.0.0.0"
+      PAPERPLANE_HOME: "/paperplane"
+      OPENAI_API_KEY: "${OPENAI_API_KEY:-}"
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY:-}"
+      PAPERPLANE_DEPLOYMENT_MODE: "authenticated"
+      PAPERPLANE_DEPLOYMENT_EXPOSURE: "private"
+      PAPERPLANE_PUBLIC_URL: "${PAPERPLANE_PUBLIC_URL:-http://localhost:3100}"
+      BETTER_AUTH_SECRET: "${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
+    volumes:
+      - "${PAPERPLANE_DATA_DIR:-./data/docker-paperplane}:/paperplane"

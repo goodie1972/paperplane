@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm typecheck:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(python3:*)",
+      "Bash(pnpm install:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node -e \":*)",
+      "Bash(node:*)",
+      "Bash(head -20 grep -n \"Projects\\\\|Agents\\\\|section\\\\|label\\\\|t\\(\" ui/src/components/SidebarAgents.tsx)",
+      "Bash(head -15 grep -n \"useLanguage\\\\|import\" ui/src/components/SidebarAgents.tsx)",
+      "Bash(find . -type f -name *.py -o -name *.json -o -name *.md -o -name *.txt -o -name *.toml -o -name *.yaml -o -name *.yml)",
+      "WebSearch",
+      "Skill(update-config)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.mcpworld.com)",
+      "Skill(firecrawl-scrape)",
+      "Bash(npm list:*)",
+      "Bash(curl -s \"https://www.mcpworld.com/zh/detail/668eec5b6f413566a14e28d8cf4738e0\")",
+      "Bash(curl -s \"https://www.mcpworld.com/api/mcp-market/server/detail?id=668eec5b6f413566a14e28d8cf4738e0&lg=zh\")",
+      "Bash(npx edgeone-pages-mcp*)",
+      "Bash(npx edgeone-pages-mcp-fullstack*)",
+      "Bash(claude config:*)",
+      "WebFetch(domain:edgeone.ai)",
+      "WebFetch(domain:cloud.tencent.com)",
+      "Bash(fly --version)",
+      "Bash(powershell.exe -Command \"iwr https://fly.io/install.ps1 -useb | iex\")",
+      "Bash(curl -L --max-time 30 \"https://github.com/superfly/flyctl/releases/latest/download/flyctl_Windows_x86_64.zip\" -o /tmp/flyctl.zip)",
+      "Bash(mkdir -p /c/Users/Admin/.fly/bin)",
+      "Read(//c/Users/Admin/.fly/bin/**)",
+      "Bash(wget --no-check-certificate -O flyctl.exe \"https://github.com/superfly/flyctl/releases/download/v0.3.93/flyctl_Windows_x86_64.exe\")",
+      "Bash(curl -L -k \"https://github.com/superfly/flyctl/releases/download/v0.3.93/flyctl_Windows_x86_64.exe\" -o /c/Users/Admin/.fly/bin/flyctl.exe --max-time 120)",
+      "Bash(unzip -o flyctl.zip)",
+      "Bash(npm install:*)",
+      "Bash(./scripts/install-flyctl.bat)",
+      "Bash(/c/Users/Admin/.fly/bin/flyctl.exe --version)",
+      "Bash(rm -f /c/Users/Admin/.fly/bin/flyctl.exe /c/Users/Admin/.fly/bin/flyctl.zip)",
+      "Bash(curl -L --max-time 60 \"https://gh.api.99988866.xyz/https://github.com/superfly/flyctl/releases/download/v0.3.93/flyctl_Windows_x86_64.zip\" -o /c/Users/Admin/.fly/bin/flyctl.zip)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "edgeone-pages-mcp"
+  ]
+}

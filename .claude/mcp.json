@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "edgeone-pages-mcp": {
+      "timeout": 600,
+      "command": "npx",
+      "args": ["edgeone-pages-mcp-fullstack@latest"],
+      "env": {
+        "EDGEONE_PAGES_API_TOKEN": "sk-yDYbUJDazDCIhyj8IGGGWDVV5WDKNX1obY4rfBej1qCJz7Me",
+        "EDGEONE_PAGES_PROJECT_NAME": ""
+      }
+    }
+  }
+}
